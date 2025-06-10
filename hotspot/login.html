@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!-- 
+  Halaman login hotspot MikroTik 
+  Untuk MI SA Arrahmaniyah
+  Dibuat oleh Ahmad Nurmansyah | 2025
+-->
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page Hotspot</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- style -->
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      .glass {
+        background: rgba(255, 255, 255, 0.1);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 1rem;
+      }
+
+      /* Animasi */
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in {
+        animation: fade-in 0.8s ease-out forwards;
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-screen bg-gradient-to-br from-indigo-800 via-purple-300 to-pink-300 flex items-center justify-center text-white"
+  >
+    <div
+      class="w-full max-w-md sm:p-8 p-4 shadow-2xl rounded-xl glass animate-fade-in"
+    >
+      <div class="text-center mb-6">
+        <img
+          src="Logo-Madrasah.png"
+          alt="Logo-Madrasah"
+          loading="lazy"
+          class="w-24 h-24 mx-auto mb-4"
+        />
+        <h1 class="text-3xl font-bold text-white drop-shadow-md">
+          Selamat Datang Di MI Arrahmaniyah
+        </h1>
+        <p class="text-base text-white/90 mt-2 italic">Silahkan Login</p>
+      </div>
+      <!-- Eror Messagge Start -->
+      <!-- $(if error) -->
+      <!-- <div class="text-sm text-red-400 text-center mb-4">$(error)</div> gunakan ini untuk mikrotik -->
+      <!-- $(endif) -->
+      <!-- Eror Message End -->
+      <form action="$(link-login-only)" method="post" class="space-y-4">
+        <input type="hidden" name="dst" value="$(link-orig)" />
+        <input type="hidden" name="popup" value="true" />
+        <div>
+          <label for="username" class="block text-sm mb-1 text-gray-200"
+            >USERNAME</label
+          >
+          <input
+            type="text"
+            name="username"
+            id="username"
+            autocomplete="off"
+            placeholder="Masukan Username Anda"
+            required
+            class="block w-full px-4 py-2 rounded-lg bg-white/10 text-white placeholder:text-white/80 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/20 transition duration-300"
+          />
+        </div>
+        <div>
+          <label for="password" class="block text-sm mb-1 text-gray-200"
+            >PASSWORD</label
+          >
+          <input
+            type="password"
+            name="password"
+            id="password"
+            autocomplete="off"
+            placeholder="Masukan Password Anda"
+            required
+            class="block w-full px-4 py-2 rounded-lg bg-white/10 text-white placeholder:text-white/80 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/20 transition duration-300"
+          />
+        </div>
+        <button
+          type="submit"
+          class="block w-full px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg hover:shadow-xl transition duration-300 ease-in-out"
+        >
+          🔐 Login
+        </button>
+      </form>
+      <footer class="mt-10 text-center text-sm text-white/70">
+        © 2025 MI SA ARRAHMANIYAH <br />
+        Dibuat dengan sepenuh hati oleh
+        <span class="text-white font-medium">Ahmad Nurmansyah</span>
+        <span class="text-red-500 text-base">♥</span>
+      </footer>
+    </div>
+  </body>
+</html>
